@@ -1,0 +1,13 @@
+node {
+stage('clone') {
+git 'https://github.com/BestDevendoye/jenkins-helloworld.git'
+}
+stage('build') {
+powershell '''javac Main.java
+'''
+}
+stage('run') {
+powershell '''java Main
+'''
+}
+}
